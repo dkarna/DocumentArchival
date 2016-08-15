@@ -1,3 +1,5 @@
+import org.junit.After;
+
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -72,6 +74,12 @@ grails.enable.native2ascii = true
 grails.spring.bean.packages = []
 // whether to disable processing of multi part requests
 grails.web.disable.multipart=false
+
+//grails logout Get method set to on -- Deepak
+grails.plugin.springsecurity.logout.postOnly = false
+
+// grails post logout redirect url setting -- Deepak
+grails.plugin.springsecurity.logout.afterLogoutUrl = '/documentArchival/index'
 
 // request parameters to mask when logging exceptions
 grails.exceptionresolver.params.exclude = ['password']
