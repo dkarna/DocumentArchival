@@ -3,8 +3,8 @@ dataSource {
     jmxExport = true
     driverClassName = "com.mysql.jdbc.Driver"
     dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-    username = "testuser1"
-    password = "password"
+    username = "root"
+    password = "iam@root"
 }
 hibernate {
     cache.use_second_level_cache = true

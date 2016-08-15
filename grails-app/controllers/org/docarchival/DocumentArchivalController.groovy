@@ -12,6 +12,16 @@ class DocumentArchivalController {
 		//render "Welcome to Document Archival Controller!!!"
 	}
 	
+	
+		def springSecurityService
+		@Secured(['IS_AUTHENTICATED_FULLY'])
+		def showUser() {
+			def user = springSecurityService.currentUser
+			render user['username']
+		}
+		
+	
+	
 	@Secured(['IS_AUTHENTICATED_FULLY'])
 	def upload() {
 		def custName = params.custName
