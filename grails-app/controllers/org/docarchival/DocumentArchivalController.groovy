@@ -24,6 +24,7 @@ class DocumentArchivalController {
 	
 	@Secured(['IS_AUTHENTICATED_FULLY'])
 	def upload() {
+		def user = springSecurityService.currentUser
 		def custName = params.custName
 		def formNo = params.formNo
 		def panNo = params.panNo
@@ -37,9 +38,9 @@ class DocumentArchivalController {
 		def accountName = params.accountName
 		def accountNo = params.accountNo
 		def docPurpose = params.docPurpose
-		render accountName
+		//render accountName
 		def file = request.getFile('file')
-		render file.originalFilename
+		//render file.originalFilename
 		if(file.empty) {
 			flash.message = "File cannot be empty"
 		}
@@ -51,9 +52,9 @@ class DocumentArchivalController {
 			documentInstance.docPurpose = docPurpose
 			documentInstance.filePath = grailsApplication.config.uploadFolder + documentInstance.docName
 			file.transferTo(new File(documentInstance.filePath))
-			documentInstance.createdBy = "Deepak"
+			documentInstance.createdBy = user['username']
 			documentInstance.createdDate = new Date()
-			documentInstance.modifiedBy = "Deepak"
+			documentInstance.modifiedBy = user['username']
 			documentInstance.modifiedDate = new Date()
 			
 			documentInstance.save(flush: true)
@@ -63,9 +64,9 @@ class DocumentArchivalController {
 			def documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue= custName
 			documetaInstance.colName = "Customer Name"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
@@ -74,9 +75,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue= formNo
 			documetaInstance.colName = "Form Number"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
@@ -90,9 +91,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = panNo
 			documetaInstance.colName = "Pan Number"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
@@ -102,9 +103,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = ownerName
 			documetaInstance.colName = "Owner Name"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
@@ -114,9 +115,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = workPhone
 			documetaInstance.colName = "Work Phone"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
@@ -126,9 +127,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = mobilePhone
 			documetaInstance.colName = "Mobile Phone"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
@@ -138,9 +139,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = regNo
 			documetaInstance.colName = "Registration Number"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
@@ -150,9 +151,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = citizenshipNo
 			documetaInstance.colName = "Citizenship Number"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
@@ -162,9 +163,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = bankName
 			documetaInstance.colName = "Bank Name"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
@@ -174,9 +175,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = bankBranch
 			documetaInstance.colName = "Branch Name"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
@@ -186,9 +187,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = accountName
 			documetaInstance.colName = "Account Name"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save()
@@ -198,9 +199,9 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = accountNo
 			documetaInstance.colName = "Account Number"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save()
@@ -210,16 +211,24 @@ class DocumentArchivalController {
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = docPurpose
 			documetaInstance.colName = "Document Purpose"
-			documetaInstance.createdBy = "Deepak"
+			documetaInstance.createdBy = user['username']
 			documetaInstance.createdDate = new Date()
-			documetaInstance.modifiedBy = "Deepak"
+			documetaInstance.modifiedBy = user['username']
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save()
 			
 		}
-	//	forward action: "index"
+		redirect(action: 'index')
 		//return
 		
 	}	
+	
+	@Secured(['IS_AUTHENTICATED_FULLY'])
+	def list() {
+		params.max = 10
+		[documentInstanceList: DocumentDetail.list(params), documentInstanceTotal: DocumentDetail.count()]
+	}
+	
 }
+
