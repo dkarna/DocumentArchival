@@ -104,7 +104,7 @@
 				<tr>	
 					
 					<th><label for="file">File Upload:</label></th>
-	                 <td><input type="file" name="file" /></td>
+	                 <td><input type="file" name="file" required /></td>
 					
 				</tr>
 				<tr>	
