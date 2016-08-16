@@ -231,5 +231,13 @@ class DocumentArchivalController {
 		[documentInstanceList: DocumentDetail.list(params), documentInstanceTotal: DocumentDetail.count()]
 	}
 	
+	
+	@Secured(['IS_AUTHENTICATED_FULLY'])
+	def showPayload(long id) {
+		DocumentDetail documentInstance = DocumentDetail.get(id)
+		File file = new File(documentInstance.filePath)
+		response.outputStream << file.newInputStream()
+		response.outputStream.flush()
+	}
 }
 

@@ -28,5 +28,10 @@
 			<type>2</type>
 			<location>/home/osboxes/Documents/workspace-ggts-3.6.4.RELEASE/DocumentArchival/target/work/plugins</location>
 		</link>
+		<link>
+			<name>web-app/images/apple.jpeg</name>
+			<type>1</type>
+			<location>/home/osboxes/Documents/uploadedfile/apple.jpeg</location>
+		</link>
 	</linkedResources>
 </projectDescription>

@@ -16,13 +16,17 @@
 					<tr>
 						<g:sortableColumn property="filename" title="Filename" />
 						<g:sortableColumn property="uploadDate" title="Upload Date" />
+						<g:sortableColumn property="uploadBy" title="Uploaded By" />
+						<g:sortableColumn property="purpose" title="Purpose" />
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${documentInstanceList}" status="i" var="documentInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-						<td><g:link id="${documentInstance.id}">${documentInstance.docName}</g:link></td>
+						<td><g:link action="showPayload" id="${documentInstance.id}" target="_blank">${documentInstance.docName}</g:link></td>
 						<td><g:formatDate date="${documentInstance.createdDate}" /></td>
+						<td>${documentInstance.createdBy}</td>
+						<td>${documentInstance.docPurpose}</td>
 					</tr>
 				</g:each>
 				</tbody>
