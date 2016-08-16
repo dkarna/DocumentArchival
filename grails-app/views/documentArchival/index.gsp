@@ -11,6 +11,7 @@
 		<sec:ifLoggedIn>
 			Welcome 
 		</sec:ifLoggedIn>
+		
 		<b><sec:loggedInUserInfo field="username"/>!!!</b> | <g:link controller="logout">Logout</g:link>
 	</p>
 	

@@ -219,6 +219,7 @@ class DocumentArchivalController {
 			documetaInstance.save()
 			
 		}
+		flash.message = "Your information has been submitted successfully"
 		redirect(action: 'index')
 		//return
 		
