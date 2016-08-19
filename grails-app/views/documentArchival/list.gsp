@@ -6,7 +6,11 @@
 	</head>
 	<body>
 		<div class="nav" role="navigation">
-			<ul><li><g:link class="create" action="index">Upload New Document</g:link></li></ul>
+			<ul>
+				<li><g:link class="list" action="list">Document List</g:link></li>
+				<li><g:link class="create" action="index">Upload New Document</g:link></li>
+				<li><g:link class="create" controller="user" action="index">Create User</g:link></li>
+			</ul>
 		</div>
 		<div class="content scaffold-list" role="main">
 			<h1>Document List</h1>
@@ -27,6 +31,8 @@
 						<td><g:formatDate date="${documentInstance.createdDate}" /></td>
 						<td>${documentInstance.createdBy}</td>
 						<td>${documentInstance.docPurpose}</td>
+						<td><g:link action="uploadEdit" id="${documentInstance.id}">Edit</g:link></td>
+						<td><g:link action="deleteUpload" id="${documentInstance.id}">Delete</g:link></td>
 					</tr>
 				</g:each>
 				</tbody>

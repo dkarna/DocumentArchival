@@ -1,6 +1,7 @@
 package org.docarchival
 
 import org.documentarchive.*
+//import org.junit.internal.runners.statements.FailOnTimeout;
 
 import grails.plugin.springsecurity.SpringSecurityService.*;
 import grails.plugin.springsecurity.annotation.Secured
@@ -11,17 +12,17 @@ class DocumentArchivalController {
 	def index() {
 		//render "Welcome to Document Archival Controller!!!"
 	}
-	
-	
-		def springSecurityService
-		@Secured(['IS_AUTHENTICATED_FULLY'])
-		def showUser() {
-			def user = springSecurityService.currentUser
-			render user['username']
-		}
-		
-	
-	
+
+
+	def springSecurityService
+	@Secured(['IS_AUTHENTICATED_FULLY'])
+	def showUser() {
+		def user = springSecurityService.currentUser
+		render user['username']
+	}
+
+
+
 	@Secured(['IS_AUTHENTICATED_FULLY'])
 	def upload() {
 		def user = springSecurityService.currentUser
@@ -46,7 +47,7 @@ class DocumentArchivalController {
 		}
 		else {
 			def documentInstance = new DocumentDetail()
-			
+
 			// Parent table data save
 			documentInstance.docName = file.originalFilename
 			documentInstance.docPurpose = docPurpose
@@ -56,9 +57,9 @@ class DocumentArchivalController {
 			documentInstance.createdDate = new Date()
 			documentInstance.modifiedBy = user['username']
 			documentInstance.modifiedDate = new Date()
-			
+
 			documentInstance.save(flush: true)
-			
+
 			//child table data save
 			// customer name
 			def documetaInstance = new DocumentMetadata()
@@ -70,7 +71,7 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
-			
+
 			// form number
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue= formNo
@@ -81,13 +82,13 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
-			
+
 			////DocumentDetail di = DocumentDetail.get(params.id)
 			//render di.docName
-		
-			
-			 // pan no
-			 
+
+
+			// pan no
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = panNo
 			documetaInstance.colName = "Pan Number"
@@ -97,9 +98,9 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
-			
+
 			// Owner of company
-			 
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = ownerName
 			documetaInstance.colName = "Owner Name"
@@ -109,9 +110,9 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
-			
+
 			// work phone
-			 
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = workPhone
 			documetaInstance.colName = "Work Phone"
@@ -121,9 +122,9 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
-			
+
 			// mobile phone
-			
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = mobilePhone
 			documetaInstance.colName = "Mobile Phone"
@@ -133,9 +134,9 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
-			
+
 			// registration number
-			
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = regNo
 			documetaInstance.colName = "Registration Number"
@@ -145,9 +146,9 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
-			
+
 			// citizenship number
-			
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = citizenshipNo
 			documetaInstance.colName = "Citizenship Number"
@@ -157,9 +158,9 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
-			
+
 			// bank name
-			
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = bankName
 			documetaInstance.colName = "Bank Name"
@@ -169,9 +170,9 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
-			
+
 			// branch name of bank
-			
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = bankBranch
 			documetaInstance.colName = "Branch Name"
@@ -181,9 +182,9 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save(flush: true)
-			
+
 			// account holder name
-			
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = accountName
 			documetaInstance.colName = "Account Name"
@@ -193,9 +194,9 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save()
-			
+
 			// account number
-			
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = accountNo
 			documetaInstance.colName = "Account Number"
@@ -205,9 +206,9 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save()
-			
+
 			// purpose of this document
-			
+
 			documetaInstance = new DocumentMetadata()
 			documetaInstance.metaValue = docPurpose
 			documetaInstance.colName = "Document Purpose"
@@ -217,21 +218,21 @@ class DocumentArchivalController {
 			documetaInstance.modifiedDate = new Date()
 			documentInstance.addToDocumentmetadata(documetaInstance)
 			documetaInstance.save()
-			
+
 		}
 		flash.message = "Your information has been submitted successfully"
 		redirect(action: 'index')
 		//return
-		
-	}	
-	
+
+	}
+
 	@Secured(['IS_AUTHENTICATED_FULLY'])
 	def list() {
 		params.max = 10
 		[documentInstanceList: DocumentDetail.list(params), documentInstanceTotal: DocumentDetail.count()]
 	}
-	
-	
+
+
 	@Secured(['IS_AUTHENTICATED_FULLY'])
 	def showPayload(long id) {
 		DocumentDetail documentInstance = DocumentDetail.get(id)
@@ -239,5 +240,73 @@ class DocumentArchivalController {
 		response.outputStream << file.newInputStream()
 		response.outputStream.flush()
 	}
+
+	// method for dashboard
+	@Secured(['IS_AUTHENTICATED_FULLY'])
+	def dashBoard() {
+
+	}
+
+	// Edit document upload
+	@Secured(['IS_AUTHENTICATED_FULLY'])
+	def uploadEdit(){
+		def docuMeta1 = DocumentDetail.executeQuery("Select docPurpose from DocumentDetail where id='?'",[params.id])
+		//[documentInstance: docuMeta1]
+		render docuMeta1.docPurpose[0]
+
+	}
+
+	// Save edited uploads
+	@Secured(['IS_AUTHENTICATED_FULLY'])
+	def editUpdate(){
+		def user = springSecurityService.currentUser
+		def documentInstance = DocumentDetail.get(params.id)
+		def custName = params.custName
+		def formNo = params.formNo
+		def panNo = params.panNo
+		def ownerName = params.ownerName
+		def workPhone = params.workPhone
+		def mobilePhone = params.mobilePhone
+		def regNo = params.regNo
+		def citizenshipNo = params.citizenshipNo
+		def bankName = params.bankName
+		def bankBranch = params.bankBranch
+		def accountName = params.accountName
+		def accountNo = params.accountNo
+
+		def file = request.getFile('file')
+		if(file.empty){
+			file = new File(documentInstance.filePath)
+		}
+		else
+		{
+			def file2 = new File(documentInstance.filePath)
+			file2.delete()
+			documentInstance.docName = file.originalFilename
+		}
+
+		documentInstance.docPurpose = params.docPurpose
+		documentInstance.filePath = grailsApplication.config.uploadFolder + documentInstance.docName
+		//render documentInstance.filePath
+		file.transferTo(new File(documentInstance.filePath))
+		documentInstance.modifiedBy = user['username']
+		documentInstance.modifiedDate = new Date()
+		documentInstance.save flush: true, failOnError: true
+
+
+
+		def documetaInstance = new DocumentMetadata()
+		documetaInstance.executeUpdate("Update DocumentMetadata set metaValue=? where colName=?", [custName, "Customer Name"])
+		redirect action: "list"
+	}
+
+	// Delete selected uploads
+	@Secured(['IS_AUTHENTICATED_FULLY'])
+	def deleteUpload(){
+		def documentInstance = DocumentDetail.get(params.id)
+		documentInstance.delete flush: true, FailOnError: true
+		redirect(action:'list')
+	}
+
 }
 
