@@ -15,9 +15,13 @@
 		<b><sec:loggedInUserInfo field="username"/>!!!</b> | <g:link controller="logout">Logout</g:link>
 	</p>
 	
-		<!--  div class="nav" role="navigation">
-			<ul><li><g:link class="list" action="list">Document List</g:link></li></ul>
-		</div-->
+			<div class="nav" role="navigation">
+				<ul>
+					<li><g:link class="list" action="list">Document List</g:link></li>
+					<li><g:link class="create" action="index">Upload New Document</g:link></li>
+					<li><g:link class="create" controller="user" action="index">Create User</g:link></li>
+				</ul>
+			</div>
 			<div class="content scaffold-create" role="main">
 				<h1>Upload New Document</h1>
 				<g:if test="${flash.message}"><div class="message" role="status">${flash.message}</div></g:if>
@@ -98,7 +102,7 @@
 				<tr>	
 					
 					<th><label for="docPurpose">Purpose</label></th>
-	                <td><input type="text" name="docPurpose" /></td>
+	                <td><input type="text" name="docPurpose" required="required"/></td>
 					
 				</tr>
 				<tr>	
