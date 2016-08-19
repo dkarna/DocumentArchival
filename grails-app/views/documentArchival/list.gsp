@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="mytheme">
 		<title>Document List</title>
 	</head>
 	<body>
-		<div class="nav" role="navigation">
-			<ul><li><g:link class="create" action="index">Upload New Document</g:link></li></ul>
-		</div>
+		
 		<div class="content scaffold-list" role="main">
 			<h1>Document List</h1>
 			<g:if test="${flash.message}"><div class="message" role="status">${flash.message}</div></g:if>
-			<table>
+			<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 				<thead>
 					<tr>
 						<g:sortableColumn property="filename" title="Filename" />

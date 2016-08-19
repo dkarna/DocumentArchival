@@ -10,6 +10,7 @@ class DocumentArchivalController {
 	@Secured(['IS_AUTHENTICATED_FULLY'])
 	def index() {
 		//render "Welcome to Document Archival Controller!!!"
+		render view:'test'
 	}
 	
 	
@@ -18,6 +19,13 @@ class DocumentArchivalController {
 		def showUser() {
 			def user = springSecurityService.currentUser
 			render user['username']
+		}
+		
+		
+		@Secured(['IS_AUTHENTICATED_FULLY'])
+		def testLayout() {
+			
+			render view:'test'
 		}
 		
 	
