@@ -16,6 +16,7 @@
               </div>
           </div>
           <div class="portlet-body form">
+          	  <g:if test="${flash.message}"><div class="message" role="status">${flash.message}</div></g:if>
               <!-- BEGIN FORM-->
               <!-- <form action="#" class="form-horizontal">  -->
               <g:uploadForm action="upload" method="post" enctype='multipart/form-data' class="form-horizontal">

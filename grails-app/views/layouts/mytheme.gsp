@@ -167,7 +167,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <li class="nav-item start ">
                             <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="icon-home"></i>
-                                <span class="title"><g:link controller="documentArchival" action="index"> Dashboard</g:link></span>
+                                <span class="title"><g:link controller="documentArchival" action="dashBoard"> Dashboard</g:link></span>
                                
                             </a>
                             <ul class="sub-menu">

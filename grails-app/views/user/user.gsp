@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="mytheme">
 		<title>Upload Document</title>
 	</head>
 	<body>
