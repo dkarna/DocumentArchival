@@ -23,36 +23,36 @@
 				</ul>
 			</div>
 			<div class="content scaffold-create" role="main">
-				<h1>Upload New Document</h1>
+				<h1>Edit Uploaded Document</h1>
 				<g:if test="${flash.message}"><div class="message" role="status">${flash.message}</div></g:if>
-				<g:uploadForm action="editUpdate" method="post" enctype='multipart/form-data'>
+				<g:form action="editUpdate" method="post" enctype='multipart/form-data'>
 				<table style="background-color:window;">
-				<!--tr>
-					
-					<th><label for="custName">Customer Name:</label></th>
-	                 <td><input type="text" name="custName" value="${documentInstanc}"/></td>
-					
-				</tr-->
+				<g:each in="${documentInstanceList.documentmetadata}" status="i" var="documetaInstance">
+					<tr>
+						<th><label for="${documetaInstance.colName}">${documetaInstance.colName}</label></th>
+						<td><input type="text" name="${documetaInstance.colName}" value="${documetaInstance.metaValue}"/></td>
+					</tr>
+				</g:each>
 				<tr>	
 					
 					<th><label for="docPurpose">Purpose</label></th>
-	                <td><input type="text" name="docPurpose" required="required" value="${documentInstance?.docPurpose}"/></td>
+	                <td><input type="text" name="docPurpose" required="required" value="${documentInstanceList.docPurpose}"/></td>
 					
 				</tr>
 				<tr>	
 					
 					<th><label for="file">File Upload:</label></th>
-	                 <td><input type="file" name="file" value="${docuMeta?.filePath}"/>${documentInstance?.filePath}</td>
+	                 <td><input type="file" name="file" value="${documentInstanceList.filePath}"/>${documentInstanceList.filePath}</td>
 					
 				</tr>
 				<tr>	
 					<fieldset class="buttons">
 					<th></th>
-					<td><g:submitButton name="upload" class="save" value="Upload" /></td>
+					<td><g:submitButton name="update" class="save" value="Update" /></td>
 					
 				</tr>
 				</table>
-				</g:uploadForm>
+				</g:form>
 			</div>
 		
 	</body>

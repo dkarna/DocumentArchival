@@ -16,5 +16,6 @@ class DocumentDetail {
 		filePath(blank:false, nullable:false)
 		createdBy(blank:false, nullable:false)
 		createdDate(blank:false, nullable:false)	
+		documentmetadata cascade: "all-delete-orphan"
     }
 }

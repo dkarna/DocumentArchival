@@ -250,10 +250,14 @@ class DocumentArchivalController {
 	// Edit document upload
 	@Secured(['IS_AUTHENTICATED_FULLY'])
 	def uploadEdit(){
-		def docuMeta1 = DocumentDetail.executeQuery("Select docPurpose from DocumentDetail where id='?'",[params.id])
-		//[documentInstance: docuMeta1]
-		render docuMeta1.docPurpose[0]
-
+		[documentInstanceList: DocumentDetail.get(params.id)]
+		//def documetaInstanceList = DocumentMetadata.executeQuery("Select dm.colName,dm.metaValue from DocumentMetadata dm Where dm.id=1")
+		//[documentInstanceList: DocumentDetail.get(params.id)]
+		//[documetaInstanceList: DocumentMetadata.get(params.id)]
+		//render documentInstanceList.docPurpose
+		//render documentInstanceList.documentmetadata[0].metaValue
+		//render documentInstanceList.documentmetadata.size();
+		//render documetaInstanceList.colName
 	}
 
 	// Save edited uploads
