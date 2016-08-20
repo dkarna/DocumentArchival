@@ -1,6 +1,9 @@
 package org.documentarchive
 
+import java.utils.*
+
 class DocumentDetail {
+	//List metadata
 	static hasMany = [documentmetadata: DocumentMetadata]
 	String docName
 	String docPurpose
@@ -10,12 +13,7 @@ class DocumentDetail {
 	String modifiedBy
 	Date modifiedDate
 	
-	static constraints = {
-		docName(blank:false, nullable:false)
-		//docPurpose(blank:false, nullable:false)
-		filePath(blank:false, nullable:false)
-		createdBy(blank:false, nullable:false)
-		createdDate(blank:false, nullable:false)	
+	static constraints = {	
 		documentmetadata cascade: "all-delete-orphan"
     }
 }

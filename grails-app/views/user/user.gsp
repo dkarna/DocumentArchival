@@ -7,7 +7,7 @@
 	</head>
 	<body>
 	
-	<p align="right" style="padding-right:40px; padding-top:5px;">
+	<%--<p align="right" style="padding-right:40px; padding-top:5px;">
 		<sec:ifLoggedIn>
 			Welcome 
 		</sec:ifLoggedIn>
@@ -15,7 +15,7 @@
 		<b><sec:loggedInUserInfo field="username"/>!!!</b> | <g:link controller="logout">Logout</g:link>
 	</p>
 	
-			<div class="nav" role="navigation">
+			--%><div class="nav" role="navigation">
 				<ul>
 					<li><g:link class="list" controller = "documentArchival" action="dashBoard">Home</g:link></li>
 					<li><g:link class="create" action="user">Add User</g:link></li>

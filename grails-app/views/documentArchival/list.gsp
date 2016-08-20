@@ -16,6 +16,8 @@
 						<g:sortableColumn property="uploadDate" title="Upload Date" />
 						<g:sortableColumn property="uploadBy" title="Uploaded By" />
 						<g:sortableColumn property="purpose" title="Purpose" />
+						<g:sortableColumn property="edit" title="Edit" />
+						<g:sortableColumn property="delete" title="Delete" />
 					</tr>
 				</thead>
 				<tbody>
@@ -25,6 +27,8 @@
 						<td><g:formatDate date="${documentInstance.createdDate}" /></td>
 						<td>${documentInstance.createdBy}</td>
 						<td>${documentInstance.docPurpose}</td>
+						<td><g:link action="uploadEdit" id="${documentInstance.id}">Edit</g:link></td>
+						<td><g:link action="deleteUpload" id="${documentInstance.id}">Delete</g:link></td>
 					</tr>
 				</g:each>
 				</tbody>

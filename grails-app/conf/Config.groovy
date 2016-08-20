@@ -75,6 +75,8 @@ grails.spring.bean.packages = []
 // whether to disable processing of multi part requests
 grails.web.disable.multipart=false
 
+grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/documentArchival/index'
 //grails logout Get method set to on -- Deepak
 grails.plugin.springsecurity.logout.postOnly = false
 
@@ -128,6 +130,7 @@ log4j.main = {
 
 
 // Added by the Spring Security Core plugin:
+
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'org.documentarchive.SecUser'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'org.documentarchive.SecUserSecRole'
 grails.plugin.springsecurity.authority.className = 'org.documentarchive.SecRole'

@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="mytheme">
 		<title>Upload Document</title>
 	</head>
 	<body>
 	
-	<p align="right" style="padding-right:40px; padding-top:5px;">
-		<sec:ifLoggedIn>
-			Welcome 
-		</sec:ifLoggedIn>
-		
-		<b><sec:loggedInUserInfo field="username"/>!!!</b> | <g:link controller="logout">Logout</g:link>
-	</p>
+<%--	<p align="right" style="padding-right:40px; padding-top:5px;">--%>
+<%--		<sec:ifLoggedIn>--%>
+<%--			Welcome --%>
+<%--		</sec:ifLoggedIn>--%>
+<%--		--%>
+<%--		<b><sec:loggedInUserInfo field="username"/>!!!</b> | <g:link controller="logout">Logout</g:link>--%>
+<%--	</p>--%>
 	
 			<div class="nav" role="navigation">
 				<ul>
@@ -25,7 +25,7 @@
 			<div class="content scaffold-create" role="main">
 				<h1>Upload New Document</h1>
 				<g:if test="${flash.message}"><div class="message" role="status">${flash.message}</div></g:if>
-				<g:uploadForm action="upload" method="post" enctype='multipart/form-data'>
+				<g:uploadForm controller="documentArchival" action="upload" method="post" enctype='multipart/form-data'>
 				<table style="background-color:window;">
 				<tr>
 					

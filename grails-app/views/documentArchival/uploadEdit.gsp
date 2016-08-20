@@ -7,7 +7,7 @@
 	</head>
 	<body>
 	
-	<p align="right" style="padding-right:40px; padding-top:5px;">
+	<%--<p align="right" style="padding-right:40px; padding-top:5px;">
 		<sec:ifLoggedIn>
 			Welcome 
 		</sec:ifLoggedIn>
@@ -15,7 +15,7 @@
 		<b><sec:loggedInUserInfo field="username"/>!!!</b> | <g:link controller="logout">Logout</g:link>
 	</p>
 	
-			<div class="nav" role="navigation">
+			--%><div class="nav" role="navigation">
 				<ul>
 					<li><g:link class="list" action="list">Document List</g:link></li>
 					<li><g:link class="create" action="index">Upload New Document</g:link></li>
@@ -26,6 +26,7 @@
 				<h1>Edit Uploaded Document</h1>
 				<g:if test="${flash.message}"><div class="message" role="status">${flash.message}</div></g:if>
 				<g:form action="editUpdate" method="post" enctype='multipart/form-data'>
+				<input type="hidden" name="id" value="${documentInstanceList.id}" />
 				<table style="background-color:window;">
 				<g:each in="${documentInstanceList.documentmetadata}" status="i" var="documetaInstance">
 					<tr>
@@ -42,7 +43,7 @@
 				<tr>	
 					
 					<th><label for="file">File Upload:</label></th>
-	                 <td><input type="file" name="file" value="${documentInstanceList.filePath}"/>${documentInstanceList.filePath}</td>
+	                 <td><input type="file" name="file" value="${documentInstanceList.filePath}"/></td>
 					
 				</tr>
 				<tr>	

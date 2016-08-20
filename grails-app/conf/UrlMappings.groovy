@@ -7,7 +7,7 @@ class UrlMappings {
 			}
         }
 
-        "/" (view:"/dashBoard")
+        "/" (controller: "documentArchival",view:"/dashBoard")
         "500"(view:'/error')
 		
 	}
