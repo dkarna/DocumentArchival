@@ -76,7 +76,7 @@ grails.spring.bean.packages = []
 grails.web.disable.multipart=false
 
 grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
-grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/documentArchival/index'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/documentArchival/dashBoard'
 //grails logout Get method set to on -- Deepak
 grails.plugin.springsecurity.logout.postOnly = false
 

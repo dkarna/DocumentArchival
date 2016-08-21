@@ -61,6 +61,12 @@ License: You must have a valid license purchased only from themeforest(the above
         <asset:stylesheet src="select2-bootstrap.min.css"/>
         <asset:stylesheet src="components-rounded.min.css"/>
         <asset:stylesheet src="login.min.css"/>
+	<style>
+	.login_message {
+		padding: 6px 25px 20px 25px;
+		color: #c33;
+	}
+	</style>
         
         </head>
     <!-- END HEAD -->
@@ -69,7 +75,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN LOGO -->
         <div class="logo">
             <a href="index.html">
-                <img src="../assets/pages/img/logo-big.png" alt="" /> </a>
+                <img src="../assets/pages/img/logo-big.png" alt="" />
+		<g:img  src="ICT_logo.png" alt="logo"/>
+	</a>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->

@@ -54,6 +54,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <asset:stylesheet src="bootstrap.min.css"/>
         
         
+        
       </head>
     <!-- END HEAD -->
 
@@ -165,9 +166,9 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- END RESPONSIVE QUICK SEARCH FORM -->
                         </li>
                         <li class="nav-item start ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+                            <a href="javascript:;" class="nav-link nav-toggle" style="color:#fcfcfc;">
                                 <i class="icon-home"></i>
-                                <span class="title"><g:link controller="documentArchival" action="dashBoard"> Dashboard</g:link></span>
+                                <span class="title"><g:link controller="documentArchival" action="dashBoard" class="headcolor"> Dashboard</g:link></span>
                                
                             </a>
                             <ul class="sub-menu">
@@ -200,7 +201,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <li class="nav-item  ">
                             
                                 <i class="icon-basket"></i>
-                                <span class="title"><g:link controller="documentArchival" action="list"> List of documents </g:link></span>
+                                <span class="title"><g:link controller="documentArchival" action="list" class="headcolor"> List of documents </g:link></span>
                                
                             
                             <ul class="sub-menu">
@@ -239,7 +240,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <li class="nav-item  ">
                          
                                 <i class="icon-docs"></i>
-                                <span class="title"><g:link controller="documentArchival" action="index"> Document Upload Form</g:link></span>
+                                <span class="title"><g:link controller="documentArchival" action="index" class="headcolor"> Document Upload Form</g:link></span>
                                
                
                             <ul class="sub-menu">
